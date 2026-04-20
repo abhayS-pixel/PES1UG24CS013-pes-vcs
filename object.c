@@ -121,7 +121,7 @@ int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out
     mkdir(dir_path, 0755);
 
     // 5. Write to a temporary file
-    char tmp_path[512];
+    char tmp_path[1024];
     snprintf(tmp_path, sizeof(tmp_path), "%s.tmp", path);
 tmp_path[sizeof(tmp_path) - 1] = '\0';
     int fd = open(tmp_path, O_CREAT | O_WRONLY | O_TRUNC, 0644);
